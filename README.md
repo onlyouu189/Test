@@ -26,32 +26,62 @@ python3 -m http.server 4173 --bind 127.0.0.1
 http://127.0.0.1:4173/index.html
 ```
 
-## 다른 사람도 접속할 수 있는 웹 링크 만들기
+## 친구에게 보낼 수 있는 진짜 웹 링크 만들기
 
-`index.html`을 더블 클릭하는 방법은 내 컴퓨터에서만 열립니다. 친구에게 보낼 수 있는 인터넷 링크가 필요하면 GitHub Pages로 배포해야 합니다.
+`index.html`을 더블 클릭하는 방법은 내 컴퓨터에서만 열립니다. 친구에게 보낼 수 있는 인터넷 링크가 필요하면 GitHub에 올리고 GitHub Pages를 켜야 합니다.
 
-이 저장소에는 GitHub Pages 자동 배포 설정이 이미 들어 있습니다. 그래서 추가 프로그램을 설치할 필요는 없습니다.
+추가 프로그램 설치는 필요 없습니다. 아래 순서대로 GitHub 웹사이트에서 진행하면 됩니다.
 
-필요한 작업은 GitHub 화면에서 딱 한 번 설정하는 것입니다.
+### 1단계: GitHub 계정 만들기
 
-1. 이 변경사항을 GitHub 저장소의 `main` 브랜치에 올립니다.
-2. GitHub 저장소 페이지에서 **Settings**를 누릅니다.
-3. 왼쪽 메뉴에서 **Pages**를 누릅니다.
-4. **Source**를 **GitHub Actions**로 선택합니다.
-5. **Actions** 탭에서 `Deploy Minesweeper to GitHub Pages` 작업이 초록색 체크로 끝날 때까지 기다립니다.
-6. 작업이 성공하면 아래 같은 주소로 접속할 수 있습니다.
+1. 브라우저에서 `https://github.com`에 접속합니다.
+2. 계정이 없다면 **Sign up**을 눌러 가입합니다.
+3. 계정이 있다면 **Sign in**을 눌러 로그인합니다.
+
+### 2단계: 새 저장소 만들기
+
+1. GitHub 오른쪽 위의 **+** 버튼을 누릅니다.
+2. **New repository**를 누릅니다.
+3. **Repository name**에 원하는 이름을 적습니다. 예: `minesweeper`
+4. 공개 링크로 친구에게 보여줄 예정이면 **Public**을 선택합니다.
+5. **Create repository**를 누릅니다.
+
+### 3단계: 파일 올리기
+
+1. 새로 만든 저장소 화면에서 **uploading an existing file** 또는 **Add file → Upload files**를 누릅니다.
+2. 이 프로젝트의 파일과 폴더를 올립니다.
+   - `index.html`
+   - `styles.css`
+   - `script.js`
+   - `README.md`
+   - `.github/workflows/pages.yml`
+3. 아래쪽의 **Commit changes** 버튼을 누릅니다.
+
+### 4단계: GitHub Pages 켜기
+
+1. 저장소 화면 위쪽의 **Settings**를 누릅니다.
+2. 왼쪽 메뉴에서 **Pages**를 누릅니다.
+3. **Build and deployment** 영역에서 **Source**를 **GitHub Actions**로 선택합니다.
+4. 저장소 위쪽의 **Actions** 탭을 누릅니다.
+5. `Deploy Minesweeper to GitHub Pages` 작업이 초록색 체크로 끝날 때까지 기다립니다.
+
+### 5단계: 링크 확인하기
+
+작업이 성공하면 보통 아래 같은 주소로 접속할 수 있습니다.
 
 ```text
 https://<GitHub사용자명>.github.io/<저장소이름>/
 ```
 
-예를 들어 사용자명이 `myname`, 저장소 이름이 `minesweeper`라면 링크는 보통 아래처럼 됩니다.
+예를 들어 GitHub 사용자명이 `myname`, 저장소 이름이 `minesweeper`라면 링크는 보통 아래처럼 됩니다.
 
 ```text
 https://myname.github.io/minesweeper/
 ```
 
-> 지금 이 작업 환경에는 GitHub 원격 저장소 주소가 연결되어 있지 않아서, 제가 실제 링크를 바로 만들어 확인할 수는 없습니다. 하지만 GitHub에 올리고 Pages 설정을 켜면 자동 배포 워크플로가 링크를 만들어 줍니다.
+그 링크를 친구에게 보내면 친구도 브라우저에서 지뢰찾기를 플레이할 수 있습니다.
+
+> 제가 이 환경에서 직접 GitHub 계정을 만들거나 사용자님의 저장소에 파일을 올릴 수는 없습니다. 현재 이 프로젝트에는 GitHub 원격 저장소 주소도 연결되어 있지 않습니다. 대신 GitHub에 올리기만 하면 자동으로 웹 링크가 만들어지도록 설정 파일은 이미 준비해 두었습니다.
 
 ## 게임 방법
 
